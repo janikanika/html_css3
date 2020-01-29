@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>Canvas</title>
+	<title>bezierCurveTo</title>
 	<script src="Modernizr-2.0.6.js" type="text/javascript"></script>
-    <script>
+    <script type="text/javascript">
     	function draw() {
     		//proverka podderzki elementa v brauzere.
     		if(!Modernizr.canvas) return;
@@ -12,19 +12,20 @@
     		var canvas = document.getElementById("canvas");
     		var context = canvas.getContext("2d");
 
-    		//sozdanie puti.
-    		context.beginPath();
-    		context.moveTo(100, 100);
-    		context.lineTo(200, 200);
+    		//pervaja tochka
+            context.moveTo(0, 100);
 
-    		//cherchenii linii na holste.
-    		context.stroke();
-    	}
+            context.bezierCurveTo(/*uprav. tochka 1*/50, 70, /*uprav. tochka 2*/90, 10, /*vtoraja tochka*/100, 100);
 
-    	if (window.addEventListener)
+            context.lineWidth = 3;
+            context.strokeStyle = "red";
+            context.stroke();
+        }
+
+         if (window.addEventListener)
     		window.addEventListener("load", draw, true);
     </script>
-</head>
+    </head>
 <body>
 <canvas id="canvas" height="300" width="300" style="border: solid 1px black;">
 	Ваш браузер не поддерживает элемент <b>canvas</b>

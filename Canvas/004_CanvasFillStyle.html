@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Canvas</title>
-	<script src="Modernizr-2.0.6.js" type="text/javascript"></script>
+	<script src="Modernizr-2.0.6.js"></script>
     <script>
     	function draw() {
     		//proverka podderzki elementa v brauzere.
@@ -12,13 +12,28 @@
     		var canvas = document.getElementById("canvas");
     		var context = canvas.getContext("2d");
 
-    		//sozdanie puti.
-    		context.beginPath();
-    		context.moveTo(100, 100);
-    		context.lineTo(200, 200);
+            context.save();
+            context.translate(100, 100);
 
-    		//cherchenii linii na holste.
+    		//nachalo puti.
+    		context.beginPath();
+    		context.moveTo(0, 0);
+    		context.lineTo(100, 0);
+            context.lineTo(100, 100);
+            context.lineTo(0, 100);
+            context.closePath();
+
+    		//nastroika stilja zalivki
+            context.fillStyle = "aqua";
+            context.fill();
+
+
+            context.lineWidth = 8;
+            context.strokeStyle = "black";
+            context.lineJoin = "bevel";
     		context.stroke();
+
+            context.restore();
     	}
 
     	if (window.addEventListener)

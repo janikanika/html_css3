@@ -1,30 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Canvas</title>
-	<script src="Modernizr-2.0.6.js" type="text/javascript"></script>
+	<title>LinearGradient</title>
+	<script src="Modernizr-2.0.6.js"></script>
     <script>
     	function draw() {
-    		//proverka podderzki elementa v brauzere.
     		if(!Modernizr.canvas) return;
 
-    		//poluchenie elementa i ego graf. konteksta.
+
     		var canvas = document.getElementById("canvas");
     		var context = canvas.getContext("2d");
 
-    		//sozdanie puti.
-    		context.beginPath();
-    		context.moveTo(100, 100);
-    		context.lineTo(200, 200);
-
-    		//cherchenii linii na holste.
-    		context.stroke();
-    	}
-
-    	if (window.addEventListener)
+    		//sozdanie radial,nogo gradienta
+    		var gradient = context.createLinearGradient(150, 150, 100, 150, 150, 200);
+            gradient.addColorStop(0, "Red");
+            gradient.addColorStop(1, "Orange"); 
+            context.fillStyle = gradient;
+            context.fillRect(0, 0, 300, 300);
+        }
+          if (window.addEventListener)
     		window.addEventListener("load", draw, true);
     </script>
-</head>
+    </head>
 <body>
 <canvas id="canvas" height="300" width="300" style="border: solid 1px black;">
 	Ваш браузер не поддерживает элемент <b>canvas</b>
