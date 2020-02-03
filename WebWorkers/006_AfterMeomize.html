@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Меомизация</title>
+	<script>
+		//priem kewirovanija rezult.
+		function calcFib(x) {
+			//proverka nalichii rezult.
+			if(!calcFib.cache[x]) {
+			if(x > 1) {
+				calcFib.cache[x] = calcFib(x - 1) + calcFib(x - 2);
+			}
+			else {
+				calcFib.cache[x] = x;
+			}
+		}
+        return calcFib.cache[x];
+    }
+    //sozdanie svoistv
+    calcFib.cache = {};
+
+		for (var i = 0; i < 50; i++) {
+			document.write(i + " = " + calcFib(i) + "<br />");
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

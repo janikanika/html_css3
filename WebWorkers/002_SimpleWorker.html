@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Web Worker</title>
+	<script type="text/javascript">
+		//sozdanie potoka
+		var worker = new Worker("task.js");
+
+		//privjazka na sobqtie message, esli potok prisqlaet dannqe
+		worker.addEventListener("message", function(e) {
+			document.getElementById("output").innerHTML += "Ответ потока: " + e.data;
+		}, true);
+
+		//otpravka dannqh.
+		worker.postMessage('Hello world');
+	</script>
+</head>
+<body>
+<div id="output"></div>
+</body>
+</html>
