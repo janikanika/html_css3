@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>counter</title>
+	<style>
+		body {
+			counter-reset: myIndex;/*nachalnoe znachenie*/
+		}
+
+		p{
+			counter-increment: myIndex;/*kazdqi raz + 1*/
+		}
+
+		p::before{
+			content: "Урок " counter(myIndex)". ";
+		}
+	</style>
+</head>
+<body>
+<p>Введение</p>
+<p>Семантическая разметка</p>
+<p>Элементы video и audio</p>
+<p>Geolocation API</p>
+<p>Формы HTML5</p>
+</body>
+</html>
