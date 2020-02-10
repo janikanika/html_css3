@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>timing-functions</title>
+	<style type="text/css">
+		div {
+			margin: 3px;
+			padding: 10px;
+			font-size: 1em;
+			border: 1px #000 solid;
+			width: 230px;
+
+			-webkit-transition:width 2s;
+			-moz-transition:width 2s;
+			-o-transition:width 2s;
+			transition:width 2s;
+		}
+		div:hover {
+			width: 600px;
+		}
+
+		#el1 {
+			/*opredelit skorost*/
+			-moz-transition-timing-function: linear;
+			-webkit-transition-timing-function: linear; 
+			-o-transition-timing-function: linear; 
+			transition-timing-function: linear; 
+		}
+
+		#el2 {
+		
+			-moz-transition-timing-function: ease;
+			-webkit-transition-timing-function: ease; 
+			-o-transition-timing-function: ease; 
+			transition-timing-function: ease; 
+		}
+
+#el3 {
+			
+			-moz-transition-timing-function: ease-in;
+			-webkit-transition-timing-function: ease-in; 
+			-o-transition-timing-function: ease-in; 
+			transition-timing-function: ease-in; 
+		}
+
+		#el4 {
+			
+			-moz-transition-timing-function: ease-out;
+			-webkit-transition-timing-function: ease-out; 
+			-o-transition-timing-function: ease-out; 
+			transition-timing-function: ease-out; 
+		}
+
+		#el5 {
+			
+			-moz-transition-timing-function: ease-in-out;
+			-webkit-transition-timing-function: ease-in-out; 
+			-o-transition-timing-function: ease-in-out; 
+			transition-timing-function: ease-in-out; 
+		}
+#el {
+			
+			-moz-transition-timing-function: cubic-bezier(0.7, 0.1, 0.8, 0.2);
+			-webkit-transition-timing-function: cubic-bezier(0.7, 0.1, 0.8, 0.2);
+			-o-transition-timing-function: cubic-bezier(0.7, 0.1, 0.8, 0.2); 
+			transition-timing-function: cubic-bezier(0.7, 0.1, 0.8, 0.2);
+		}
+
+	</style>
+</head>
+<body>
+	<a href="http://cubic-bezier.com/#.17,.67,.83,.67">cubic-bezier geberate</a><br/>
+	<img src="easing_functions.png"/>
+	<dir id="el1">linear</dir>
+	<dir id="el2">ease</dir>
+	<dir id="el3">ease-in</dir>
+	<dir id="el4">ease-out</dir>
+	<dir id="el5">ease-in-out</dir>
+	<dir id="el6">cubic-bezier(0.7, 0.1, 0.8, 0.2)</dir>
+	<a href="http://www.w3.org/TR/css3-transitions/#transition-timing-function_tag">W3C transition-timing-function</a>
+
+</body>
+</html>

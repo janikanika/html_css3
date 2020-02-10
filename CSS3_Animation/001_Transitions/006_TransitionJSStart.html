@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>запуск через javascript</title>
+	<style>
+		#id1 {
+			border:1px #000 solid;
+			width: 300px;
+			cursor: pointer;
+			padding: 10px;
+			font-size: 1.5em;
+			-webkit-transition:width 2s;
+			-moz-transition:width 2s;
+			-o-transition:width 2s;
+			transition:width 2s;
+		}
+	</style>
+</head>
+<body>
+<dir id="id1">Элемент</dir>
+<button id="startAnimation">start</button>
+<script>
+	document.getElementById("startAnimation").onclick = function() {
+		document.getElementById("id1").style.width ="400px";
+	}
+</script>
+</body>
+</html>
